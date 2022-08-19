@@ -3,15 +3,12 @@ import './style.css';
 
 // Write TypeScript code!
 let title: string = 'MyApp';
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>${title}</h1>
-<hr/>
-<p>Parágrafo Qualquer...<p/>`;
+document.getElementById('app.title').innerHTML = title;
 
-console.log('Olá, Mundo!');
+let counter: number = 0;
 
-for (let i = 1; i <= 10; i++) {
-  if (i % 2 == 0) {
-    console.log(i);
-  }
-}
+let intervalId = setInterval(() => {
+  counter = counter + 1;
+  let counterDiv = document.getElementById('app.counter');
+  counterDiv.innerHTML = counter.toString();
+}, 1000);
